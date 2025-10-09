@@ -1,0 +1,77 @@
+﻿﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+    <section class="mb-5">
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"> Địa chỉ</h5>
+                        <p class="card-text">
+                            123, Đường Học Viện<br />
+                            Quận Tri Thức, TP. Công Nghệ
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"> Email</h5>
+                        <p class="card-text">
+                            support@libraryapp.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"> Điện thoại</h5>
+                        <p class="card-text">
+                            (+84) 123 456 789
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mb-5">
+        <h3 class="text-center mb-4">Gửi tin nhắn cho chúng tôi</h3>
+        <form asp-controller="Home" asp-action="Contact" method="post" class="mx-auto" style="max-width: 600px;">
+            <div class="mb-3">
+                <label for="name" class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Nhập họ và tên" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Địa chỉ Email</label>
+                <input type="email" class="form-control" id="email" name="Email" placeholder="Nhập email" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Nội dung</label>
+                <textarea class="form-control" id="message" name="Message" rows="5" placeholder="Nhập nội dung liên hệ" required></textarea>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Gửi</button>
+            </div>
+        </form>
+    </section>
+    <section class="mt-5">
+        <h3 class="text-center mb-3">Bản đồ</h3>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.502478331006!2d106.6601723!3d10.7626229"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+            </iframe>
+        </div>
+    </section>
+</div>

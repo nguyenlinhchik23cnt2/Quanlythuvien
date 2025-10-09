@@ -1,0 +1,120 @@
+﻿﻿@using Quanlythuvien.Models;
+@{
+    var books = ViewBag.Books as List<HomeBookViewModel> ?? new List<HomeBookViewModel>();
+    var topBorrowedBooks = ViewBag.PopularBooks as List<PopularBookViewModel> ?? new List<PopularBookViewModel>();
+
+    var searchQuery = ViewBag.SearchQuery as string ?? "";
+}
+
+<div class="container mt-3">
+    <div class="banner mb-4">
+        <img src="~/images/banner.jpg" alt="Thư Viện" class="img-fluid w-100 rounded shadow" />
+    </div>
+    <div class="row">
+
+        <div class="col-md-3">
+            <h5 class="mb-3">Top Sách Được Mượn Nhiều</h5>
+            <ul class="list-group">
+                @if (!topBorrowedBooks.Any())
+                {
+                    <li class="list-group-item text-muted">Chưa có dữ liệu</li>
+                }
+                else
+                {
+                    @foreach (var b in topBorrowedBooks)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <a asp-action="Details" asp-route-id="@b.BookId" class="text-decoration-none text-dark">
+                                @b.Title
+                            </a>
+                            <span class="badge bg-primary rounded-pill">@b.TotalBorrows</span>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+
+        <div class="col-md-9">
+            <form asp-action="Index" method="get" class="mb-4">
+                <div class="input-group">
+                    <input type="text" name="searchQuery" value="@searchQuery" placeholder="Tìm kiếm sách..." class="form-control" />
+                    <button type="submit" class="btn btn-primary">Tìm</button>
+                </div>
+            </form>
+
+            <div class="row">
+                @if (!books.Any())
+                {
+                    <div class="col-12">
+                        <div class="alert alert-info">Không tìm thấy sách phù hợp.</div>
+                    </div>
+                }
+                else
+                {
+
+                    @foreach (var book in books)
+                    {
+                        string imageSrc;
+
+                        if (string.IsNullOrEmpty(book.ImagePath))
+                        {
+                            imageSrc = Url.Content("~/images/books/default-book.jpg"); // ảnh mặc định nếu trống
+                        }
+                        else if (book.ImagePath.StartsWith("http"))
+                        {
+                            imageSrc = book.ImagePath;
+                        }
+                        else if (book.ImagePath.StartsWith("/images"))
+                        {
+                            imageSrc = Url.Content("~" + book.ImagePath);
+                        }
+                        else
+                        {
+                            imageSrc = Url.Content($"~/images/books/{book.ImagePath}");
+                        }
+
+
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="@imageSrc" alt="@book.Title" class="card-img-top" style="height: 300px; object-fit: cover;" />
+
+                                <div class="card-body">
+                                    <h5 class="card-title">@book.Title</h5>
+                                    <p class="card-text text-muted">
+                                        Tác giả: @(string.Join(", ", book.Authors))
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">Thể loại: @book.CateName</small><br />
+                                        <small class="text-muted">Năm XB: @book.YearPublished</small>
+                                    </p>
+                                </div>
+
+                                <div class="card-footer text-center">
+                                    <a asp-action="Details" asp-route-id="@book.BookId" class="btn btn-outline-primary btn-sm">
+                                        Xem chi tiết
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    
+
+
+
+                    
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .banner img {
+            max-height: 250px;
+            object-fit: cover;
+        }
+    </style>
+}

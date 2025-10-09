@@ -1,0 +1,80 @@
+﻿﻿@{
+    ViewData["Title"] = "Trang Quản Lý Admin";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Trang Quản Lý Admin</h2>
+    <p>Xin chào, Admin! Bạn có quyền quản lý toàn bộ hệ thống.</p>
+
+    <!-- Thống kê -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-center bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng Sách</h5>
+                    <h2>@ViewBag.TotalBooks</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng Sinh Viên</h5>
+                    <h2>@ViewBag.TotalStudents</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng Thủ Thư</h5>
+                    <h2>@ViewBag.TotalLibrarians</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-warning text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Phiếu Mượn Đang Mở</h5>
+                    <h2>@ViewBag.TotalBorrows</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu chức năng -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Quản Lý Admin</h5>
+                    <a asp-controller="Admins" asp-action="Index" class="btn btn-primary w-100">Xem</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Quản Lý Thủ Thư</h5>
+                    <a asp-controller="Librarians" asp-action="Index" class="btn btn-primary w-100">Xem</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Quản Lý Sinh Viên</h5>
+                    <a asp-controller="Students" asp-action="Index" class="btn btn-primary w-100">Xem</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Quản Lý Sách</h5>
+                    <a asp-controller="Books" asp-action="Index" class="btn btn-primary w-100">Xem</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,137 @@
+﻿﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Quản Lý Thư Viện</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" /> <!-- Thêm file CSS tùy chỉnh nếu có -->
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/books/logo.png" alt="Logo Thư Viện" style="height:100px; width:auto;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Categories" asp-action="Index">Thể Loại</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Authors" asp-action="Index">Tác Giả</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Introduce">Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Liên Hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Bảo Mật</a>
+                        </li>
+                    </ul>
+
+
+                    <ul class="navbar-nav ms-auto">
+                        @{
+                            var role = HttpContextAccessor.HttpContext?.Session.GetString("UserRole");
+                            var username = HttpContextAccessor.HttpContext?.Session.GetString("Username");
+                            string ctrl = role switch
+                            {
+                                "Admin" => "Admins",
+                                "Librarian" => "Librarians",
+                                _ => "Students"
+                            };
+                        }
+
+                        @if (!string.IsNullOrEmpty(role))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Xin chào, @username
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="userMenu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="@ctrl" asp-action="Index">Quản Lý</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                   
+                                </ul>
+                            </li>
+                            @if (role == "Admin")
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="adminMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Quản Lý Admin
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="adminMenu">
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Admins" asp-action="Index">Quản Lý Admin</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Librarians" asp-action="Index">Quản Lý Thủ Thư</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Students" asp-action="Index">Quản Lý Sinh Viên</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Books" asp-action="Index">Quản Lý Sách</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Categories" asp-action="Create">Thêm Thể Loại</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Authors" asp-action="Create">Thêm Tác Giả</a></li>
+                                    </ul>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            //<li class="nav-item">
+                               // <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Login">Đăng Nhập</a>
+                            ///</li>
+                            //<li class="nav-item">
+                            ///    <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Register">Đăng Ký</a>
+                            //</li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Register">Đăng xuất</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="container mt-3">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success">@TempData["Message"]</div>
+        }
+
+        @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ErrorCount > 0)
+        {
+            <div class="alert alert-danger">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <p>@error.ErrorMessage</p>
+                }
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+        }
+
+        @RenderBody()
+    </main>
+
+    <footer class="bg-light text-center py-3 mt-4">
+        <p>&copy; @DateTime.Now.Year - Quản Lý Thư Viện | <a href="@Url.Action("Privacy", "Home")">Chính Sách Bảo Mật</a> | <a href="@Url.Action("Contact", "Home")">Liên Hệ</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
