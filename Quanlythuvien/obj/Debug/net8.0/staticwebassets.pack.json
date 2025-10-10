@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\images\\books\\vutru.jpg"
     },
     {
+      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\kythuatso.jpg",
+      "PackagePath": "staticwebassets\\images\\kythuatso.jpg"
+    },
+    {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

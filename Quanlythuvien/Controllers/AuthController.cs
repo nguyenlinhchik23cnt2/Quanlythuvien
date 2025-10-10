@@ -29,7 +29,8 @@ namespace Quanlythuvien.Controllers
             if (admin != null)
             {
                 await SignInUser(admin.Username, "Admin");
-                return RedirectToAction("Index", "Admins");
+                return RedirectToAction("Index", "Home" 
+                    );
             }
 
             // 2. Librarian
@@ -37,7 +38,7 @@ namespace Quanlythuvien.Controllers
             if (librarian != null)
             {
                 await SignInUser(librarian.Username, "Librarian");
-                return RedirectToAction("Index", "Librarians");
+                return RedirectToAction("Index", "Home");
             }
 
             // 3. Student

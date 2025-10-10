@@ -26,7 +26,7 @@ namespace Quanlythuvien.Controllers
         {
 
             var booksQuery = _context.Books
-                .Include(b => b.Categories)
+                .Include(b => b.BookCategories)
                 .ThenInclude(bc => bc.Categories)
                 .Include(b => b.Publisher)
                 .Include(b => b.BookAuthors)
@@ -34,7 +34,7 @@ namespace Quanlythuvien.Controllers
                 .AsQueryable();
 
             if (categoryId != 0)
-                booksQuery = booksQuery.Where(b => b.Categories.Any(c => c.CateId == categoryId));
+                booksQuery = booksQuery.Where(b => b.BookCategories.Any(c => c.CateId == categoryId));
 
             if (!string.IsNullOrWhiteSpace(searchQuery))
                 booksQuery = booksQuery.Where(b => b.Title.Contains(searchQuery));
@@ -48,22 +48,24 @@ namespace Quanlythuvien.Controllers
                     PublisherName = b.Publisher != null ? b.Publisher.PublisherName : "",
                     YearPublished = b.YearPublished,
                     ImagePath = b.ImagePath ?? "",
-                    CateName = b.Categories.Count > 0 ? string.Join(", ", b.Categories.Select(c => c.Categories.CateName)) : "Chưa phân loại"
+                    CateName = b.BookCategories.Count > 0 ? string.Join(", ", b.BookCategories.Select(c => c.Categories.CateName)) : "Chưa phân loại"
                 })
                 .ToList();
 
             // Lấy top 5 sách được mượn nhiều
             var popularBooks = _context.Borroweds
                 .GroupBy(bd => bd.BookId)
+                .AsEnumerable() // 👈 chuyển dữ liệu sang LINQ to Objects ở đây
                 .Select(g => new PopularBookViewModel
                 {
-                    BookId = (int)g.Key,
-                    Title = g.Select(x => x.Book != null ? x.Book.Title : "").FirstOrDefault() ?? "",
+                    BookId = g.Key ?? 0,
+                    Title = g.Select(x => x.Book?.Title ?? "").FirstOrDefault() ?? "",
                     TotalBorrows = g.Count()
                 })
                 .OrderByDescending(x => x.TotalBorrows)
                 .Take(5)
                 .ToList();
+
 
             ViewBag.PopularBooks = popularBooks;
             ViewBag.Books = books;
@@ -80,7 +82,7 @@ namespace Quanlythuvien.Controllers
             }
 
             var book = _context.Books
-                .Include(b => b.Categories)
+                .Include(b => b.BookCategories)
                 .ThenInclude(bc => bc.Categories)
                 .Include(b => b.Publisher)
                 .Include(b => b.BookAuthors)
@@ -96,8 +98,8 @@ namespace Quanlythuvien.Controllers
                     PublisherName = b.Publisher != null ? b.Publisher.PublisherName : "",
                     YearPublished = b.YearPublished,
                     ImagePath = b.ImagePath ?? "",
-                    CateName = b.Categories.Any()
-                    ? string.Join(", ", b.Categories.Select(c => c.Categories != null ? c.Categories.CateName : "Không rõ"))
+                    CateName = b.BookCategories.Any()
+                    ? string.Join(", ", b.BookCategories.Select(c => c.Categories != null ? c.Categories.CateName : "Không rõ"))
                     : "Chưa phân loại",
                     Description = b.Description ?? "Không có mô tả",
                     Location = b.Location ?? "Không rõ",

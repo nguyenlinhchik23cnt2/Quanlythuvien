@@ -3,144 +3,32 @@
   "WorkspaceRootPath": "D:\\do an 2\\Quanlythuvien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\homebookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\homebookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\librarianscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\librarianscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\finescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\finescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\borrowedscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\borrowedscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\admins\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\admins\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\admins\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\admins\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\bookauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\bookauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\bookcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\bookcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\home\\introduce.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\home\\introduce.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\popularbookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\popularbookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\books\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\books\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\views\\books\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\views\\books\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|d:\\do an 2\\quanlythuvien\\quanlythuvien\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6164F10-F7D4-4978-AA3D-6377A01A3B51}|Quanlythuvien\\Quanlythuvien.csproj|solutionrelative:quanlythuvien\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -149,289 +37,87 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 257,
-          "SelectedChildIndex": 8,
+          "DockedHeight": 158,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
+            }
+          ]
+        },
+        {
+          "DockedHeight": 383,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeBookViewModel.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\HomeBookViewModel.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\HomeBookViewModel.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\HomeBookViewModel.cs",
-              "RelativeToolTip": "Quanlythuvien\\Models\\HomeBookViewModel.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowBgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Author.cs",
+              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Author.cs",
+              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\Author.cs",
+              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Author.cs",
+              "RelativeToolTip": "Quanlythuvien\\Models\\Author.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T05:07:44.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AuthorsController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\AuthorsController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\AuthorsController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\AuthorsController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\AuthorsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:19:46.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BooksController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\BooksController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\BooksController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\BooksController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\BooksController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:20:21.257Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Auth\\Register.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Auth\\Register.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Auth\\Register.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Auth\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T04:36:37.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Auth\\Login.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Auth\\Login.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Auth\\Login.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Auth\\Login.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T04:36:00.736Z",
+              "WhenOpened": "2025-10-10T03:33:49.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEYAAAAAAAAAAADwv14AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T04:17:11.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Program.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Program.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Program.cs",
-              "RelativeToolTip": "Quanlythuvien\\Program.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAmwEUAAAAAAAAAAAAAAA==",
+              "Title": "BookAuthor.cs",
+              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\BookAuthor.cs",
+              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\BookAuthor.cs",
+              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\BookAuthor.cs",
+              "RelativeToolTip": "Quanlythuvien\\Models\\BookAuthor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T13:34:38.365Z",
+              "WhenOpened": "2025-10-10T03:33:40.125Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAGAAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T05:06:24.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\AuthController.cs",
               "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Quanlythuvien\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAkwEcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCgAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T13:32:31.92Z",
+              "WhenOpened": "2025-10-10T03:24:55.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Admin.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\Admin.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Admin.cs",
-              "RelativeToolTip": "Quanlythuvien\\Models\\Admin.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T05:28:58.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "StudentsController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\StudentsController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\StudentsController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\StudentsController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\StudentsController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBwAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:25:41.18Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Quanlythuvien\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAGcAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T05:02:16.42Z",
+              "WhenOpened": "2025-10-10T03:20:54.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "PublishersController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\PublishersController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\PublishersController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\PublishersController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\PublishersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\Book.cs",
+              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Book.cs",
+              "RelativeToolTip": "Quanlythuvien\\Models\\Book.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwBwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:25:12.585Z",
+              "WhenOpened": "2025-10-10T03:13:10.795Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "LibrariansController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\LibrariansController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\LibrariansController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\LibrariansController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\LibrariansController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:24:31.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Students\\Index.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Students\\Index.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Students\\Index.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Students\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T14:27:18.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Student.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Student.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\Student.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Student.cs",
-              "RelativeToolTip": "Quanlythuvien\\Models\\Student.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T14:12:15.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserRole.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\UserRole.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\UserRole.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\UserRole.cs",
-              "RelativeToolTip": "Quanlythuvien\\Models\\UserRole.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA1wBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T14:24:53.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "FinesController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\FinesController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\FinesController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\FinesController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\FinesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:24:03.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\CategoriesController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\CategoriesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:23:31.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AdminsController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\AdminsController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\AdminsController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\AdminsController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\AdminsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:16:55.147Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BorrowedsController.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\BorrowedsController.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Controllers\\BorrowedsController.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Controllers\\BorrowedsController.cs",
-              "RelativeToolTip": "Quanlythuvien\\Controllers\\BorrowedsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T04:21:57.188Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 5,
               "Title": "BookCategory.cs",
               "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\BookCategory.cs",
               "RelativeDocumentMoniker": "Quanlythuvien\\Models\\BookCategory.cs",
@@ -439,168 +125,26 @@
               "RelativeToolTip": "Quanlythuvien\\Models\\BookCategory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T06:26:11.284Z"
+              "WhenOpened": "2025-10-10T03:11:48.056Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Admins\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Admins\\Edit.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Admins\\Edit.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Admins\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T07:24:20.442Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Admins\\Index.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Admins\\Index.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Admins\\Index.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Admins\\Index.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAE8AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T05:21:29.804Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "BookAuthor.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\BookAuthor.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\BookAuthor.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\BookAuthor.cs",
-              "RelativeToolTip": "Quanlythuvien\\Models\\BookAuthor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T06:34:02.702Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Book.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Book.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\Book.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Book.cs",
-              "RelativeToolTip": "Quanlythuvien\\Models\\Book.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAADwvx4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T06:56:56.258Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 6,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Quanlythuvien\\Models\\Category.cs",
               "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Category.cs",
               "RelativeToolTip": "Quanlythuvien\\Models\\Category.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA7wA4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T06:38:41.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Author.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Author.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\Author.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\Author.cs",
-              "RelativeToolTip": "Quanlythuvien\\Models\\Author.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA6wA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T06:50:43.802Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Contact.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Home\\Contact.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Home\\Contact.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Home\\Contact.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Home\\Contact.cshtml",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T05:13:20.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Introduce.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Home\\Introduce.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Home\\Introduce.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Home\\Introduce.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Home\\Introduce.cshtml",
-              "ViewState": "AgIAAD4AAAAAAAAAAADwv2MAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T05:14:12.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAADwv2oAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T05:14:32.802Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "PopularBookViewModel.cs",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\PopularBookViewModel.cs",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Models\\PopularBookViewModel.cs",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Models\\PopularBookViewModel.cs",
-              "RelativeToolTip": "Quanlythuvien\\Models\\PopularBookViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T05:08:44.632Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Books\\Create.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Books\\Create.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Books\\Create.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Books\\Create.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T04:50:29.357Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\appsettings.json",
-              "RelativeDocumentMoniker": "Quanlythuvien\\appsettings.json",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\appsettings.json",
-              "RelativeToolTip": "Quanlythuvien\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-09T04:14:43.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Books\\Index.cshtml",
-              "RelativeDocumentMoniker": "Quanlythuvien\\Views\\Books\\Index.cshtml",
-              "ToolTip": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\Views\\Books\\Index.cshtml",
-              "RelativeToolTip": "Quanlythuvien\\Views\\Books\\Index.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAD0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-09T04:46:35.163Z"
+              "WhenOpened": "2025-10-09T18:44:21.458Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedHeight": 150,
+          "DockedHeight": 115,
           "SelectedChildIndex": -1,
           "Children": [
             {

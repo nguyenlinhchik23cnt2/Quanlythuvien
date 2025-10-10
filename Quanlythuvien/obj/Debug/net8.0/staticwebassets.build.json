@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Bmouqxvfpxr535eQgpB3huoDGdI100fd7V/1zOpFutc=",
+  "Hash": "GkHhqKMMkbONe+OBFb08GatKZRPcwVFnwEDv2oggQlk=",
   "Source": "Quanlythuvien",
   "BasePath": "_content/Quanlythuvien",
   "Mode": "Default",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\books\\vutru.jpg"
+    },
+    {
+      "Identity": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\kythuatso.jpg",
+      "SourceId": "Quanlythuvien",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\",
+      "BasePath": "_content/Quanlythuvien",
+      "RelativePath": "images/kythuatso.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\kythuatso.jpg"
     },
     {
       "Identity": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\js\\site.js",

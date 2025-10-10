@@ -1,15 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Quanlythuvien.Models;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Quanlythuvien.Models
 {
-    public partial class Category
+    public class Category
     {
-
+        [Key]
         public int CateId { get; set; }
-        public string CateName { get; set; } = null!;
-        public virtual ICollection<Book> Books { get; set; } = new List<Book>();
 
-        public virtual ICollection<BookCategory> BookCategories { get; set; } = new List<BookCategory>();
+        [Required(ErrorMessage = "Vui lòng nhập tên thể loại")]
+        public string CateName { get; set; } = string.Empty;
+
+        // Quan hệ nhiều-nhiều
+        public ICollection<BookCategory> BookCategories { get; set; } = new List<BookCategory>();
     }
 }

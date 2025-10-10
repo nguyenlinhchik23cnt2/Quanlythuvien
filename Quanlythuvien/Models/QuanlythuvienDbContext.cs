@@ -109,7 +109,7 @@ namespace Quanlythuvien.Models
                 entity.Property(e => e.CateId).HasColumnName("cateId");
 
                 // Cấu hình rõ ràng khóa ngoại để tránh shadow property
-                entity.HasOne(d => d.Books).WithMany(p => p.Categories)
+                entity.HasOne(d => d.Book).WithMany(p => p.BookCategories)
                     .HasForeignKey(d => d.BookId)
                     .HasPrincipalKey(b => b.BookId)
                     .OnDelete(DeleteBehavior.Cascade)
