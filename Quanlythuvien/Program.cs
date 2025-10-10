@@ -8,12 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 // 🧱 Cấu hình Services
 // =======================
 
+// Kích hoạt MVC
 builder.Services.AddControllersWithViews();
 
 // Cho phép truy cập HttpContext trong các service
 builder.Services.AddHttpContextAccessor();
 
-// Cấu hình Session (dùng để lưu thông tin đăng nhập)
+// Cấu hình Session (lưu thông tin đăng nhập)
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -21,12 +22,12 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// Kết nối database
+// Kết nối SQL Server
 var connectionString = builder.Configuration.GetConnectionString("DbConnet");
 builder.Services.AddDbContext<QuanlythuvienDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-// Cấu hình xác thực cookie
+// Cấu hình xác thực bằng cookie
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -39,9 +40,33 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 var app = builder.Build();
 
 // =======================
+// 🧩 Tạo dữ liệu mẫu nếu chưa có
+// =======================
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<QuanlythuvienDbContext>();
+
+    // Đảm bảo database tồn tại
+    context.Database.EnsureCreated();
+
+    // ✅ Thêm tài khoản admin mặc định nếu chưa có
+    if (!context.Admins.Any())
+    {
+        context.Admins.Add(new Admin
+        {
+            Username = "admin",
+            PasswordHash = "123456", // Có thể thay bằng mã hóa SHA256
+           
+            Email = "admin@gmail.com"
+        });
+        context.SaveChanges();
+        Console.WriteLine(">> ✅ Tạo tài khoản admin mặc định: admin / 123456");
+    }
+}
+
+// =======================
 // ⚙️ Middleware pipeline
 // =======================
-
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

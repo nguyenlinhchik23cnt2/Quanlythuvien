@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Quanlythuvien.Models;
-using Quanlythuvien.Models;
+
 using System.Security.Claims;
 
 namespace Quanlythuvien.Controllers
