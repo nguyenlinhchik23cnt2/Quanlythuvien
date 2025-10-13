@@ -12,6 +12,9 @@ namespace Quanlythuvien.Models
         [Required(ErrorMessage = "Vui lòng nhập tên sách")]
         [StringLength(100)]
         public string Title { get; set; } = string.Empty;
+        public int? AuthorId { get; set; }
+        public Author? author { get; set; }
+        [ForeignKey("AuthorId")]
 
         public int? PublisherId { get; set; }
 
@@ -34,6 +37,9 @@ namespace Quanlythuvien.Models
         public string? DownloadLink { get; set; }
 
         public bool Status { get; set; } = true;
+        // 🔹 THÊM MỚI
+        [NotMapped]
+        public IFormFile? ImageFile { get; set; }
 
         // Quan hệ nhiều-nhiều
         public ICollection<BookAuthor> BookAuthors { get; set; } = new List<BookAuthor>();

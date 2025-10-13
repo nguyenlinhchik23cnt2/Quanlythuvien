@@ -1,35 +1,151 @@
 ﻿@model IEnumerable<Quanlythuvien.Models.Category>
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách thể loại";
 }
 
-<h1>Index</h1>
+<!-- ✅ PHẦN CSS -->
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CateName)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CateName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CateId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CateId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CateId">Delete</a>
-            </td>
-        </tr>
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+        border: 1px solid #dee2e6 !important;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle !important;
+    }
+
+    thead {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+        transition: 0.3s;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+        color: white;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border: none;
+        color: black;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            color: white;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+        color: white;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+</style>
+
+<!-- ✅ PHẦN HTML -->
+<h2>📚 Danh Sách Thể Loại Sách</h2>
+
+@if (User.IsInRole("Admin") || User.IsInRole("Librarian"))
+{
+    <p class="text-end">
+        <a asp-action="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Thêm thể loại mới
+        </a>
+    </p>
 }
-    </tbody>
-</table>
+
+<div class="table-container">
+    <table class="table table-bordered table-hover text-center align-middle">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên thể loại</th>
+                <th>Số lượng sách</th>
+                @if (User.IsInRole("Admin") || User.IsInRole("Librarian"))
+                {
+                    <th>Thao tác</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int index = 1;
+            }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@index</td>
+                    <td>@item.CateName</td>
+                    <td>@(item.BookCategories?.Count() ?? 0)</td>
+
+                    @if (User.IsInRole("Admin") || User.IsInRole("Librarian"))
+                    {
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.CateId" class="btn btn-warning btn-sm">✏️Sửa</a>
+                            <a asp-action="Details" asp-route-id="@item.CateId" class="btn btn-primary btn-sm">🔍Xem</a>
+                            <a asp-action="Delete" asp-route-id="@item.CateId" class="btn btn-danger btn-sm"
+                               onclick="return confirm('Bạn có chắc muốn xóa thể loại này?')">🗑️Xóa</a>
+                        </td>
+                    }
+                </tr>
+                index++;
+            }
+        </tbody>
+    </table>
+</div>

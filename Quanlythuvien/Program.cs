@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Quanlythuvien.Models;
 
@@ -56,7 +57,7 @@ using (var scope = app.Services.CreateScope())
         {
             Username = "admin",
             PasswordHash = "123456", // Có thể thay bằng mã hóa SHA256
-           
+
             Email = "admin@gmail.com"
         });
         context.SaveChanges();

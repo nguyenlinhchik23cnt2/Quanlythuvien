@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Chi tiết sách";
+    var book = ViewBag.Book as Quanlythuvien.Models.HomeBookViewModel;
+}
+
+<h2>@book?.Title</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@book?.ImagePath" alt="@book?.Title" class="img-fluid rounded" />
+    </div>
+    <div class="col-md-8">
+        <dl class="row">
+            <dt class="col-sm-3">Tác giả:</dt>
+            <dd class="col-sm-9">@string.Join(", ", book?.Authors ?? new List<string>())</dd>
+
+            <dt class="col-sm-3">Nhà xuất bản:</dt>
+            <dd class="col-sm-9">@book?.PublisherName</dd>
+
+            <dt class="col-sm-3">Năm xuất bản:</dt>
+            <dd class="col-sm-9">@book?.YearPublished</dd>
+
+            <dt class="col-sm-3">Thể loại:</dt>
+            <dd class="col-sm-9">@book?.CateName</dd>
+
+            <dt class="col-sm-3">Số lượng:</dt>
+            <dd class="col-sm-9">@book?.Quantity</dd>
+
+            <dt class="col-sm-3">Tình trạng:</dt>
+            <dd class="col-sm-9">@book?.Status</dd>
+
+            <dt class="col-sm-3">Vị trí:</dt>
+            <dd class="col-sm-9">@book?.Location</dd>
+
+            <dt class="col-sm-3">Mô tả:</dt>
+            <dd class="col-sm-9">@book?.Description</dd>
+
+            @if (User.IsInRole("Student"))
+            {
+                <!-- ✅ Sửa: thêm asp-controller="Borroweds" -->
+                <form asp-controller="Borroweds" asp-action="BorrowBook" method="post">
+                    <input type="hidden" name="bookId" value="@ViewBag.Book.BookId" />
+                    <button type="submit" class="btn btn-primary">📚 Mượn sách</button>
+                </form>
+            }
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success mt-2">@TempData["Success"]</div>
+            }
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger mt-2">@TempData["Error"]</div>
+            }
+
+            @if (!string.IsNullOrEmpty(book?.DownloadLink))
+            {
+                <dt class="col-sm-3">Tải xuống:</dt>
+                <dd class="col-sm-9">
+                    <a href="@book.DownloadLink" target="_blank">Tải sách</a>
+                </dd>
+            }
+        </dl>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Quay lại danh sách</a>
+</div>

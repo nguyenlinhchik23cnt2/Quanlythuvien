@@ -1,48 +1,78 @@
-﻿﻿@using Quanlythuvien.Models;
+﻿@using Quanlythuvien.Models
 @{
     var books = ViewBag.Books as List<HomeBookViewModel> ?? new List<HomeBookViewModel>();
     var topBorrowedBooks = ViewBag.PopularBooks as List<PopularBookViewModel> ?? new List<PopularBookViewModel>();
 
+    // Danh sách thể loại
+    var categories = ViewBag.Categories as List<Category> ?? new List<Category>();
+    var selectedCateId = ViewBag.SelectedCateId as int? ?? 0;
     var searchQuery = ViewBag.SearchQuery as string ?? "";
 }
 
-<div class="container mt-3">
-    <div class="banner mb-4">
-        <img src="~/images/banner.jpg" alt="Thư Viện" class="img-fluid w-100 rounded shadow" />
-    </div>
-    <div class="row">
+<div class="container py-4">
 
-        <div class="col-md-3">
-            <h5 class="mb-3">Top Sách Được Mượn Nhiều</h5>
-            <ul class="list-group">
-                @if (!topBorrowedBooks.Any())
+    <!-- 🔍 Thanh tìm kiếm -->
+    <div class="text-center mb-4">
+        <h2 class="fw-bold text-primary mb-3">Thư viện Đại học CT</h2>
+
+        <form asp-action="Search" method="get" class="d-flex justify-content-center gap-2">
+            <select name="category" class="form-select w-auto">
+                <option value="">Tất cả</option>
+                @foreach (var c in categories)
                 {
-                    <li class="list-group-item text-muted">Chưa có dữ liệu</li>
+                    <option value="@c.CateId" selected="@(c.CateId == selectedCateId)">
+                        @c.CateName
+                    </option>
                 }
-                else
-                {
-                    @foreach (var b in topBorrowedBooks)
-                    {
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <a asp-action="Details" asp-route-id="@b.BookId" class="text-decoration-none text-dark">
-                                @b.Title
-                            </a>
-                            <span class="badge bg-primary rounded-pill">@b.TotalBorrows</span>
-                        </li>
-                    }
-                }
-            </ul>
+            </select>
+            <input type="text" name="keyword" class="form-control w-50"
+                   placeholder="Nhập từ khóa cần tìm..." value="@searchQuery" />
+            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+        </form>
+
+        <div class="mt-3">
+            <button class="btn btn-outline-primary">Tài liệu mới</button>
+            <button class="btn btn-outline-secondary">Tài liệu môn học</button>
+            <button class="btn btn-outline-success">Tài liệu giáo dục mở</button>
         </div>
+    </div>
 
+    <!-- 🧰 Dịch vụ Thư viện -->
+    <div class="my-5">
+        <h2 class="text-center mb-4 fw-bold text-uppercase">Dịch vụ Thư viện</h2>
 
-        <div class="col-md-9">
-            <form asp-action="Index" method="get" class="mb-4">
-                <div class="input-group">
-                    <input type="text" name="searchQuery" value="@searchQuery" placeholder="Tìm kiếm sách..." class="form-control" />
-                    <button type="submit" class="btn btn-primary">Tìm</button>
+        <div class="row g-4 justify-content-center">
+            @{
+                var services = new[]
+                {
+                    new {Title="Mượn trả, gia hạn tài liệu", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/Banner_dv_muon_tra_gia_han.jpg", Des="Tìm hiểu cách mượn, trả và gia hạn tài liệu tại Thư viện."},
+                    new {Title="Phát hành giáo trình", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/banner_dv_phathanhgiaotrinh.jpg", Des="Dịch vụ cung cấp giáo trình cho sinh viên của TMU."},
+                    new {Title="Đăng ký thành viên Thư viện", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/image16.png", Des="Đăng ký thành viên để sử dụng đầy đủ dịch vụ."},
+                    new {Title="Mượn liên thư viện", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/image17.png", Des="Sử dụng dịch vụ Mượn Liên thư viện khi tài liệu bạn cần không có tại TMU."}
+                };
+            }
+
+            @foreach (var s in services)
+            {
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="item-home-card shadow-sm rounded overflow-hidden">
+                        <div class="item-home-card__image">
+                            <div class="img-box" style="background-image: url('@s.Img');"></div>
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold text-primary mb-2">@s.Title</h6>
+                            <p class="text-muted small">@s.Des</p>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            }
+        </div>
+    </div>
 
+    <div class="row">
+        <!-- 📚 Danh mục Sách -->
+        <div class="col-lg-9">
+            <h4 class="mb-3 text-primary border-bottom pb-2">Danh mục Sách</h4>
             <div class="row">
                 @if (!books.Any())
                 {
@@ -52,33 +82,17 @@
                 }
                 else
                 {
-
                     @foreach (var book in books)
                     {
-                        string imageSrc;
-
-                        if (string.IsNullOrEmpty(book.ImagePath))
-                        {
-                            imageSrc = Url.Content("~/images/books/default-book.jpg"); // ảnh mặc định nếu trống
-                        }
-                        else if (book.ImagePath.StartsWith("http"))
-                        {
-                            imageSrc = book.ImagePath;
-                        }
-                        else if (book.ImagePath.StartsWith("/images"))
-                        {
-                            imageSrc = Url.Content("~" + book.ImagePath);
-                        }
-                        else
-                        {
-                            imageSrc = Url.Content($"~/images/books/{book.ImagePath}");
-                        }
-
+                        string imageSrc = string.IsNullOrEmpty(book.ImagePath)
+                            ? Url.Content("~/images/books/default-book.jpg")
+                            : (book.ImagePath.StartsWith("http")
+                                ? book.ImagePath
+                                : Url.Content("~" + book.ImagePath));
 
                         <div class="col-md-4 mb-4">
                             <div class="card h-100 shadow-sm">
                                 <img src="@imageSrc" alt="@book.Title" class="card-img-top" style="height: 300px; object-fit: cover;" />
-
                                 <div class="card-body">
                                     <h5 class="card-title">@book.Title</h5>
                                     <p class="card-text text-muted">
@@ -89,7 +103,6 @@
                                         <small class="text-muted">Năm XB: @book.YearPublished</small>
                                     </p>
                                 </div>
-
                                 <div class="card-footer text-center">
                                     <a asp-action="Details" asp-route-id="@book.BookId" class="btn btn-outline-primary btn-sm">
                                         Xem chi tiết
@@ -98,23 +111,83 @@
                             </div>
                         </div>
                     }
-
-                    
-
-
-
-                    
                 }
             </div>
         </div>
+
+       
+     
     </div>
+
+    <!-- 📰 Tin tức & Sự kiện -->
+    <section id="news-and-events-page" class="mt-5">
+        <div class="row">
+            <!-- Tin tức -->
+            <section class="section-page col-lg-8 col-md-6">
+                <div class="section-page__header d-flex justify-content-between align-items-center mb-3">
+                    <span class="fw-bold text-primary">Tin tức</span>
+                    <a asp-controller="News" asp-action="Index" class="text-decoration-none text-primary fw-semibold">Xem thêm</a>
+                </div>
+                <!-- Bỏ Model.NewsList tạm thời -->
+            </section>
+
+            <!-- Sự kiện -->
+            <section class="section-page col-lg-4 col-md-6">
+                <div class="section-page__header d-flex justify-content-between align-items-center mb-3">
+                    <span class="fw-bold text-primary">Sự kiện</span>
+                    <a asp-controller="Events" asp-action="Index" class="text-decoration-none text-primary fw-semibold">Xem thêm</a>
+                </div>
+                <!-- Bỏ Model.EventList tạm thời -->
+            </section>
+        </div>
+    </section>
 </div>
 
 @section Styles {
     <style>
-        .banner img {
-            max-height: 250px;
-            object-fit: cover;
+        body {
+            background-color: #f9fafc;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            transition: all 0.3s ease;
+        }
+        .img-box {
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+        }
+        .item-home-card__title {
+            font-size: 1.1rem;
+            margin-top: 8px;
+        }
+        .item-home-card__des {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .item-home-card {
+            transition: all 0.3s ease;
+            background: #fff;
+            height: 100%;
+        }
+        .item-home-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+        .item-home-card__image .img-box {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+        }
+        .event-item:hover {
+            background: #f0f8ff;
+            transform: translateY(-2px);
+        }
+        @@media (max-width: 767px) {
+            .item-home-card__image .img-box {
+                height: 160px;
+            }
         }
     </style>
 }

@@ -1,0 +1,32 @@
+﻿@model List<Quanlythuvien.Models.Borrowed>
+
+<h3>📚 Sách bạn đang mượn</h3>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tên sách</th>
+            <th>Ngày mượn</th>
+            <th>Hạn trả</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.Book.Title</td>
+                <td>@b.BorrowDate</td>
+                <td>@b.DueDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

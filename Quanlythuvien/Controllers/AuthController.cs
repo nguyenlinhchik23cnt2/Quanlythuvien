@@ -28,27 +28,44 @@ namespace Quanlythuvien.Controllers
             var admin = await _context.Admins.FirstOrDefaultAsync(a => a.Username == username && a.PasswordHash == password);
             if (admin != null)
             {
+                HttpContext.Session.SetString("Role", "Admin");
                 await SignInUser(admin.Username, "Admin");
-                return RedirectToAction("Index", "Home" 
-                    );
+                return RedirectToAction("Index", "Home");
             }
 
+
+        
+
             // 2. Librarian
-            var librarian = await _context.Librarians.FirstOrDefaultAsync(l => l.Username == username && l.PasswordHash == password);
+            var librarian = await _context.Librarians
+                .FirstOrDefaultAsync(l => l.Username.ToLower().Trim() == username.ToLower().Trim()
+                                       && l.PasswordHash.Trim() == password.Trim());
+
             if (librarian != null)
             {
+                HttpContext.Session.SetString("Role", "Librarian");
                 await SignInUser(librarian.Username, "Librarian");
                 return RedirectToAction("Index", "Home");
             }
+
+
 
             // 3. Student
             var student = await _context.Students
     .FirstOrDefaultAsync(s => s.Username == username && s.PasswordHash == password);
             if (student != null)
             {
+                // ✅ Lưu StudentId và tên vào Session
+                HttpContext.Session.SetInt32("StudentId", student.StudentId);
+                HttpContext.Session.SetString("StudentName", student.Fullname ?? student.Username);
+                HttpContext.Session.SetString("Role", "Student");
+
+                // ✅ Đăng nhập cookie
                 await SignInUser(student.Username, "Student");
+
                 return RedirectToAction("Index", "Home");
             }
+
 
 
             ViewBag.Error = "❌ Sai tài khoản hoặc mật khẩu!";
@@ -58,10 +75,11 @@ namespace Quanlythuvien.Controllers
         private async Task SignInUser(string username, string role)
         {
             var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.Role, role)
-            };
+                {
+                    new Claim(ClaimTypes.Name, username),
+                    new Claim(ClaimTypes.Role, role)
+                };
+
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principal = new ClaimsPrincipal(identity);

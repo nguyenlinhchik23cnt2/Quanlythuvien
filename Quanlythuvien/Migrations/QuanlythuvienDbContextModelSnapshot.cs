@@ -521,6 +521,56 @@ namespace Quanlythuvien.Migrations
                     b.ToTable("Students");
                 });
 
+            modelBuilder.Entity("Quanlythuvien.Models.StudentBook", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("StudentBooks");
+                });
+
+            modelBuilder.Entity("Quanlythuvien.Models.StudentCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CateName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StudentCategories");
+                });
+
             modelBuilder.Entity("Quanlythuvien.Models.UserRole", b =>
                 {
                     b.Property<int>("UserRoleId")
@@ -653,6 +703,17 @@ namespace Quanlythuvien.Migrations
                     b.Navigation("Borrow");
                 });
 
+            modelBuilder.Entity("Quanlythuvien.Models.StudentBook", b =>
+                {
+                    b.HasOne("Quanlythuvien.Models.StudentCategory", "Category")
+                        .WithMany("Books")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("Quanlythuvien.Models.UserRole", b =>
                 {
                     b.HasOne("Quanlythuvien.Models.Admin", "Admin")
@@ -740,6 +801,11 @@ namespace Quanlythuvien.Migrations
                     b.Navigation("Borroweds");
 
                     b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("Quanlythuvien.Models.StudentCategory", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

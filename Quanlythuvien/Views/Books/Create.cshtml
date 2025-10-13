@@ -1,67 +1,131 @@
 ﻿@model Quanlythuvien.Models.Book
-
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm sách";
 }
 
-<h1>Create</h1>
+<style>
+    body {
+        background-color: #f4f6f8;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #333;
+    }
 
-<h4>Book</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PublisherId" class="control-label"></label>
-                <select asp-for="PublisherId" class ="form-control" asp-items="ViewBag.PublisherId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="YearPublished" class="control-label"></label>
-                <input asp-for="YearPublished" class="form-control" />
-                <span asp-validation-for="YearPublished" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quantity" class="control-label"></label>
-                <input asp-for="Quantity" class="form-control" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImagePath" class="control-label"></label>
-                <input asp-for="ImagePath" class="form-control" />
-                <span asp-validation-for="ImagePath" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Location" class="control-label"></label>
-                <input asp-for="Location" class="form-control" />
-                <span asp-validation-for="Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DownloadLink" class="control-label"></label>
-                <input asp-for="DownloadLink" class="form-control" />
-                <span asp-validation-for="DownloadLink" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+        text-align: center;
+        color: #1b4d89;
+        margin-bottom: 25px;
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #1b4d89;
+            box-shadow: 0 0 3px rgba(27, 77, 137, 0.3);
+            outline: none;
+        }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    .btn-primary {
+        background-color: #1b4d89;
+        color: #fff;
+    }
+
+        .btn-primary:hover {
+            background-color: #163b67;
+        }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: #333;
+    }
+
+        .btn-secondary:hover {
+            background-color: #bbb;
+        }
+
+    .form-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+    <h2>📘 Thêm sách mới</h2>
+
+    <form asp-action="Create" enctype="multipart/form-data">
+        <label asp-for="Title">Tên sách</label>
+        <input asp-for="Title" />
+
+        <label>Tác giả</label>
+        <select name="SelectedAuthorIds" asp-items="ViewBag.Authors" multiple class="form-select">
+        </select>
+        <small class="text-muted">Giữ Ctrl để chọn nhiều tác giả</small>
+
+        <label>Thể loại</label>
+        <select name="SelectedCategoryIds" asp-items="ViewBag.Categories" multiple class="form-select">
+        </select>
+        <small class="text-muted">Giữ Ctrl để chọn nhiều thể loại</small>
+
+        <label asp-for="PublisherId">Nhà xuất bản</label>
+        <select asp-for="PublisherId" asp-items="ViewBag.Publishers" class="form-select">
+            <option value="">-- Chọn NXB --</option>
+        </select>
+
+
+        <label asp-for="YearPublished">Năm xuất bản</label>
+        <input asp-for="YearPublished" type="number" />
+
+        <label asp-for="Quantity">Số lượng</label>
+        <input asp-for="Quantity" type="number" />
+
+        <label asp-for="Location">Vị trí</label>
+        <input asp-for="Location" />
+
+        <label asp-for="Description">Mô tả</label>
+        <textarea asp-for="Description" rows="3"></textarea>
+
+        <label asp-for="ImagePath">Ảnh bìa</label>
+        <input asp-for="ImagePath" type="file" name="imageFile" />
+
+        <div>
+            <input asp-for="Status" type="checkbox" /> <label asp-for="Status">Còn trong kho</label>
+        </div>
+
+        <div class="form-footer">
+            <a asp-action="Index" class="btn btn-secondary">← Quay lại</a>
+            <button type="submit" class="btn btn-primary">💾 Lưu</button>
+        </div>
+    </form>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

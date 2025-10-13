@@ -1,80 +1,99 @@
-﻿﻿@{
-    ViewData["Title"] = "Trang Quản Lý Admin";
+﻿@{
+    ViewData["Title"] = "Thống kê tổng quan hệ thống";
 }
 
-<div class="container mt-5">
-    <h2 class="mb-4">Trang Quản Lý Admin</h2>
-    <p>Xin chào, Admin! Bạn có quyền quản lý toàn bộ hệ thống.</p>
+<div class="dashboard-container">
+    <h2 class="dashboard-title">📊 Thống kê tổng quan hệ thống</h2>
 
-    <!-- Thống kê -->
-    <div class="row mb-4">
-        <div class="col-md-3">
-            <div class="card text-center bg-primary text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Tổng Sách</h5>
-                    <h2>@ViewBag.TotalBooks</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-center bg-success text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Tổng Sinh Viên</h5>
-                    <h2>@ViewBag.TotalStudents</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-center bg-info text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Tổng Thủ Thư</h5>
-                    <h2>@ViewBag.TotalLibrarians</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-center bg-warning text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Phiếu Mượn Đang Mở</h5>
-                    <h2>@ViewBag.TotalBorrows</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="card-container">
 
-    <!-- Menu chức năng -->
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Quản Lý Admin</h5>
-                    <a asp-controller="Admins" asp-action="Index" class="btn btn-primary w-100">Xem</a>
-                </div>
-            </div>
+        <!-- Admin -->
+        <div class="stat-card">
+            <div class="icon">🧑‍💼</div>
+            <h3>Admin</h3>
+            <p class="count">@((ViewBag.AdminCount ?? 0))</p>
         </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Quản Lý Thủ Thư</h5>
-                    <a asp-controller="Librarians" asp-action="Index" class="btn btn-primary w-100">Xem</a>
-                </div>
-            </div>
+
+        <!-- Thủ thư -->
+        <div class="stat-card">
+            <div class="icon">📘</div>
+            <h3>Thủ thư</h3>
+            <p class="count">@((ViewBag.LibrarianCount ?? 0))</p>
         </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Quản Lý Sinh Viên</h5>
-                    <a asp-controller="Students" asp-action="Index" class="btn btn-primary w-100">Xem</a>
-                </div>
-            </div>
+
+        <!-- Sinh viên -->
+        <div class="stat-card">
+            <div class="icon">🎓</div>
+            <h3>Sinh viên</h3>
+            <p class="count">@((ViewBag.StudentCount ?? 0))</p>
         </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Quản Lý Sách</h5>
-                    <a asp-controller="Books" asp-action="Index" class="btn btn-primary w-100">Xem</a>
-                </div>
-            </div>
+
+        <!-- Sách -->
+        <div class="stat-card">
+            <div class="icon">📚</div>
+            <h3>Sách</h3>
+            <p class="count">@((ViewBag.BookCount ?? 0))</p>
         </div>
+
+        <!-- Phiếu mượn -->
+        <div class="stat-card">
+            <div class="icon">🧾</div>
+            <h3>Phiếu mượn</h3>
+            <p class="count">@((ViewBag.BorrowedCount ?? 0))</p>
+        </div>
+
     </div>
 </div>
+
+<style>
+    .dashboard-container {
+        padding: 40px 20px;
+        background: #f8fafc;
+        min-height: 80vh;
+        text-align: center;
+    }
+
+    .dashboard-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 30px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .stat-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        width: 180px;
+        padding: 20px;
+        transition: transform 0.2s;
+    }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .stat-card .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card h3 {
+            margin-bottom: 5px;
+            color: #1e3a8a;
+        }
+
+        .stat-card .count {
+            font-size: 22px;
+            font-weight: 600;
+            color: #334155;
+        }
+</style>

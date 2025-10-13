@@ -4,13 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Quanlythuvien.Models;
 
 namespace Quanlythuvien.Controllers
 {
-    [Authorize(Roles = "Admin,Librarian")]
     public class AuthorsController : Controller
     {
         private readonly QuanlythuvienDbContext _context;
@@ -20,40 +18,32 @@ namespace Quanlythuvien.Controllers
             _context = context;
         }
 
-        // GET: Authors
+        // ✅ Ai cũng xem được danh sách tác giả
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Authors.ToListAsync());
         }
 
-        // GET: Authors/Details/5
+        // ✅ Ai cũng xem được chi tiết tác giả
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var author = await _context.Authors
                 .FirstOrDefaultAsync(m => m.AuthorId == id);
-            if (author == null)
-            {
-                return NotFound();
-            }
+            if (author == null) return NotFound();
 
             return View(author);
         }
 
-        // GET: Authors/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+        // ✅ Chỉ Admin/Librarian được thêm, sửa, xóa
+        [Authorize(Roles = "Admin,Librarian")]
+        public IActionResult Create() => View();
 
-        // POST: Authors/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin,Librarian")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AuthorId,AuthorName,Bio")] Author author)
         {
@@ -66,33 +56,23 @@ namespace Quanlythuvien.Controllers
             return View(author);
         }
 
-        // GET: Authors/Edit/5
+        [Authorize(Roles = "Admin,Librarian")]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var author = await _context.Authors.FindAsync(id);
-            if (author == null)
-            {
-                return NotFound();
-            }
+            if (author == null) return NotFound();
+
             return View(author);
         }
 
-        // POST: Authors/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin,Librarian")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("AuthorId,AuthorName,Bio")] Author author)
         {
-            if (id != author.AuthorId)
-            {
-                return NotFound();
-            }
+            if (id != author.AuthorId) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -103,40 +83,30 @@ namespace Quanlythuvien.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AuthorExists(author.AuthorId))
-                    {
+                    if (!_context.Authors.Any(e => e.AuthorId == author.AuthorId))
                         return NotFound();
-                    }
                     else
-                    {
                         throw;
-                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
             return View(author);
         }
 
-        // GET: Authors/Delete/5
+        [Authorize(Roles = "Admin,Librarian")]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var author = await _context.Authors
                 .FirstOrDefaultAsync(m => m.AuthorId == id);
-            if (author == null)
-            {
-                return NotFound();
-            }
+            if (author == null) return NotFound();
 
             return View(author);
         }
 
-        // POST: Authors/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin,Librarian")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
@@ -144,15 +114,9 @@ namespace Quanlythuvien.Controllers
             if (author != null)
             {
                 _context.Authors.Remove(author);
+                await _context.SaveChangesAsync();
             }
-
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool AuthorExists(int id)
-        {
-            return _context.Authors.Any(e => e.AuthorId == id);
         }
     }
 }

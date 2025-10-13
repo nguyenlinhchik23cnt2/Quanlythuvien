@@ -4,11 +4,81 @@
     ViewData["Title"] = "Index";
 }
 
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #dee2e6 !important;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle !important;
+    }
+
+    thead {
+        background-color: #007bff;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Nút thêm, sửa, xóa, xem chi tiết */
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+        color: white;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border: none;
+        color: black;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            color: white;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+        color: white;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+</style>
+<!-- ✅ HẾT PHẦN CSS THÊM -->
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>

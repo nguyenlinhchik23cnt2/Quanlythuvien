@@ -3,16 +3,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Quanlythuvien.Models;
-
 using System.Diagnostics;
 using System.Linq;
 
 namespace Quanlythuvien.Controllers
 {
-    /// <summary>
     [Authorize(Roles = "Admin,Librarian,Student")]
-
-    /// 
     public class HomeController : Controller
     {
         private readonly QuanlythuvienDbContext _context;
@@ -22,9 +18,9 @@ namespace Quanlythuvien.Controllers
             _context = context ?? throw new ArgumentNullException(nameof(context)); // Kiểm tra null
         }
 
+        // --- Giữ nguyên logic gốc ---
         public IActionResult Index(int categoryId = 0, string searchQuery = "")
         {
-
             var booksQuery = _context.Books
                 .Include(b => b.BookCategories)
                 .ThenInclude(bc => bc.Categories)
@@ -44,7 +40,7 @@ namespace Quanlythuvien.Controllers
                 {
                     BookId = b.BookId,
                     Title = b.Title,
-                    Authors = b.BookAuthors != null ? b.BookAuthors.Select(ba => ba.Author.AuthorName).ToList() : new List<string>(), // Điều hướng qua BookAuthors
+                    Authors = b.BookAuthors != null ? b.BookAuthors.Select(ba => ba.Author.AuthorName).ToList() : new List<string>(),
                     PublisherName = b.Publisher != null ? b.Publisher.PublisherName : "",
                     YearPublished = b.YearPublished,
                     ImagePath = b.ImagePath ?? "",
@@ -55,7 +51,7 @@ namespace Quanlythuvien.Controllers
             // Lấy top 5 sách được mượn nhiều
             var popularBooks = _context.Borroweds
                 .GroupBy(bd => bd.BookId)
-                .AsEnumerable() // 👈 chuyển dữ liệu sang LINQ to Objects ở đây
+                .AsEnumerable()
                 .Select(g => new PopularBookViewModel
                 {
                     BookId = g.Key ?? 0,
@@ -66,7 +62,6 @@ namespace Quanlythuvien.Controllers
                 .Take(5)
                 .ToList();
 
-
             ViewBag.PopularBooks = popularBooks;
             ViewBag.Books = books;
             ViewBag.SelectedCategory = categoryId;
@@ -74,6 +69,7 @@ namespace Quanlythuvien.Controllers
 
             return View();
         }
+
         public IActionResult Details(int id)
         {
             if (_context.Books == null)
@@ -118,10 +114,68 @@ namespace Quanlythuvien.Controllers
             return View();
         }
 
+        // ✅ PHẦN THÊM MỚI - CHỨC NĂNG MƯỢN SÁCH
+        
+        [Authorize(Roles = "Student,Admin,Librarian")]
+        [HttpPost]
+        public async Task<IActionResult> BorrowBook(int id)
+        {
+            try
+            {
+                var book = await _context.Books.FirstOrDefaultAsync(b => b.BookId == id);
+                if (book == null)
+                {
+                    TempData["Error"] = "Không tìm thấy sách.";
+                    return RedirectToAction("Details", new { id });
+                }
+
+                if (book.Quantity <= 0)
+                {
+                    TempData["Error"] = "Sách hiện đã hết.";
+                    return RedirectToAction("Details", new { id });
+                }
+
+                int? studentId = HttpContext.Session.GetInt32("StudentId");
+                if (studentId == null)
+                {
+                    TempData["Error"] = "Vui lòng đăng nhập lại (session trống).";
+                    return RedirectToAction("Details", new { id });
+                }
+
+                var borrowed = new Borrowed
+                {
+                    BookId = id,
+                    StudentId = studentId.Value,
+                    BorrowDate = DateOnly.FromDateTime(DateTime.Now),
+                    DueDate = DateOnly.FromDateTime(DateTime.Now.AddDays(7)), // 👈 ngày hẹn trả
+                    ReturnDate = null, // chưa trả
+                    Status = true,
+                    BookStatus = "Đang mượn"
+                };
+
+                _context.Borroweds.Add(borrowed);
+
+                // Giảm số lượng sách
+                book.Quantity -= 1;
+                await _context.SaveChangesAsync();
+
+                TempData["Success"] = "✅ Mượn sách thành công!";
+                return RedirectToAction("Details", new { id });
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "❌ Lỗi khi mượn sách: " + ex.Message;
+                return RedirectToAction("Details", new { id });
+            }
+        }
+
+
+        // ✅ HẾT PHẦN THÊM MỚI
+
         public IActionResult Privacy() => View();
         public IActionResult Introduce() => View();
-
         public IActionResult Contact() => View();
+        public IActionResult theloai() => View();
 
         [HttpPost]
         public IActionResult Contact(string Name, string Email, string Message)
@@ -142,6 +196,30 @@ namespace Quanlythuvien.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        // ✅ ĐOẠN MỚI: 
+        [Authorize(Roles = "Student,Admin,Librarian")]
+        public async Task<IActionResult> StudentCategories()
+        {
+            var categories = await _context.Categories.ToListAsync();
+            return View(categories); // View: Views/Home/StudentCategories.cshtml
+        }
+
+        // ✅ ĐOẠN MỚI: Lọc sách theo thể loại (chỉ xem)
+        [Authorize(Roles = "Student,Admin,Librarian")]
+        public async Task<IActionResult> StudentBooksByCategory(int cateId)
+        {
+            var category = await _context.Categories
+                .Include(c => c.BookCategories)
+                .ThenInclude(bc => bc.Book)
+                .FirstOrDefaultAsync(c => c.CateId == cateId);
+
+            if (category == null) return NotFound();
+
+            ViewBag.CategoryName = category.CateName;
+            return View(category); // View: Views/Home/StudentBooksByCategory.cshtml
+        }
+
     }
 
     public class ErrorViewModel

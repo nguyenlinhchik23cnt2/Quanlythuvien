@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Quanlythuvien.Models.Category>
+
+@{
+    ViewData["Title"] = "Danh sách thể loại";
+}
+
+<h2 class="mb-3 text-primary">📚 Danh sách thể loại</h2>
+
+<div class="row">
+    @foreach (var c in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="card-title">@c.CateName</h5>
+                    <a asp-action="StudentBooksByCategory" asp-route-cateId="@c.CateId"
+                       class="btn btn-outline-primary btn-sm mt-2">Xem sách</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

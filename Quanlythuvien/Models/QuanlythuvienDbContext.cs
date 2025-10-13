@@ -27,6 +27,8 @@ namespace Quanlythuvien.Models
 
         public virtual DbSet<BookAuthor> BookAuthors { get; set; }
         public virtual DbSet<BookCategory> BookCategories { get; set; }
+        
+       
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

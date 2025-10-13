@@ -1,0 +1,56 @@
+﻿@model Quanlythuvien.Models.Category
+
+@{
+    ViewData["Title"] = "Thể loại: " + ViewBag.CategoryName;
+}
+
+<h2 class="text-primary mb-3">📘 @ViewBag.CategoryName</h2>
+
+@if (!Model.BookCategories.Any())
+{
+    <div class="alert alert-info">Chưa có sách trong thể loại này.</div>
+}
+else
+{
+    <div class="row">
+        @foreach (var bc in Model.BookCategories)
+        {
+            var b = bc.Book;
+
+            // 🟢 Xử lý ảnh bìa đầy đủ đường dẫn
+            string imageSrc;
+            if (string.IsNullOrEmpty(b.ImagePath))
+            {
+                imageSrc = Url.Content("~/images/books/default-book.jpg");
+            }
+            else if (b.ImagePath.StartsWith("http"))
+            {
+                imageSrc = b.ImagePath;
+            }
+            else if (b.ImagePath.StartsWith("/images"))
+            {
+                imageSrc = Url.Content("~" + b.ImagePath);
+            }
+            else
+            {
+                imageSrc = Url.Content($"~/images/books/{b.ImagePath}");
+            }
+
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="@imageSrc" alt="@b.Title" class="card-img-top" style="height: 220px; object-fit: cover;" />
+                    <div class="card-body">
+                        <h6 class="card-title">@b.Title</h6>
+                        <p class="card-text text-muted">@b.YearPublished</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a asp-action="Details" asp-route-id="@b.BookId" class="btn btn-outline-primary btn-sm">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+}

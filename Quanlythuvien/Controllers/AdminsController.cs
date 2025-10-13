@@ -19,8 +19,34 @@ namespace Quanlythuvien.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Admins.ToListAsync());
+            // Lấy danh sách các loại để hiển thị chi tiết
+            var adminList = await _context.Admins.ToListAsync();
+            var librarianList = await _context.Librarians.ToListAsync();
+            var studentList = await _context.Students.ToListAsync();
+            var bookList = await _context.Books.ToListAsync();
+            var borrowList = await _context.Borroweds
+                                   .Include(b => b.Student)
+                                   .Include(b => b.Book)
+                                   .ToListAsync();
+
+            // Gán vào ViewBag
+            ViewBag.AdminList = adminList;
+            ViewBag.LibrarianList = librarianList;
+            ViewBag.StudentList = studentList;
+            ViewBag.BookList = bookList;
+            ViewBag.BorrowList = borrowList;
+
+            // Thống kê tổng số
+            ViewBag.AdminCount = adminList.Count;
+            ViewBag.LibrarianCount = librarianList.Count;
+            ViewBag.StudentCount = studentList.Count;
+            ViewBag.BookCount = bookList.Count;
+            ViewBag.BorrowedCount = borrowList.Count;
+
+            return View();
         }
+
+
 
         public async Task<IActionResult> Details(int? id)
         {
@@ -100,5 +126,6 @@ namespace Quanlythuvien.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
