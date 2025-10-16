@@ -17,16 +17,8 @@
       "PackagePath": "staticwebassets\\images\\books\\9a21d1ba-ec69-4493-ad67-741fcfae8f83.jpg"
     },
     {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\bacho.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\bacho.jpg"
-    },
-    {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\bansacvanhoavn.jpg",
       "PackagePath": "staticwebassets\\images\\books\\bansacvanhoavn.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\bietdoingoisao.webp",
-      "PackagePath": "staticwebassets\\images\\books\\bietdoingoisao.webp"
     },
     {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\cacnenvanhoathegioi.jpg",
@@ -37,14 +29,6 @@
       "PackagePath": "staticwebassets\\images\\books\\camnangvetongiao.jpg"
     },
     {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\chiecthuyenbian.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\chiecthuyenbian.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\chube.png",
-      "PackagePath": "staticwebassets\\images\\books\\chube.png"
-    },
-    {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\dacnhantam.jpg",
       "PackagePath": "staticwebassets\\images\\books\\dacnhantam.jpg"
     },
@@ -53,32 +37,8 @@
       "PackagePath": "staticwebassets\\images\\books\\daivietsukytoanthu.jpg"
     },
     {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\danong.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\danong.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\demen.webp",
-      "PackagePath": "staticwebassets\\images\\books\\demen.webp"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\dengiobaylen.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\dengiobaylen.jpg"
-    },
-    {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\digital.jpg",
       "PackagePath": "staticwebassets\\images\\books\\digital.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\dotroiday.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\dotroiday.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\ghichepphapy.jfif",
-      "PackagePath": "staticwebassets\\images\\books\\ghichepphapy.jfif"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\giaimatinhyeu.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\giaimatinhyeu.jpg"
     },
     {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\harrypotter.jfif",
@@ -95,10 +55,6 @@
     {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\lichsuvn.jpg",
       "PackagePath": "staticwebassets\\images\\books\\lichsuvn.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\linhhonbaothu.webp",
-      "PackagePath": "staticwebassets\\images\\books\\linhhonbaothu.webp"
     },
     {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\logo.png",
@@ -121,36 +77,8 @@
       "PackagePath": "staticwebassets\\images\\books\\nguongoctogiao.jpg"
     },
     {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\nhagiakim.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\nhagiakim.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\nhungngoisaotrenbautroithanhpho.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\nhungngoisaotrenbautroithanhpho.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\sisovang0.webp",
-      "PackagePath": "staticwebassets\\images\\books\\sisovang0.webp"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\sodua.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\sodua.jpg"
-    },
-    {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\tamlyhoc.png",
       "PackagePath": "staticwebassets\\images\\books\\tamlyhoc.png"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\thamonnhungdungnguoi.webp",
-      "PackagePath": "staticwebassets\\images\\books\\thamonnhungdungnguoi.webp"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\thanhgionggiong.png",
-      "PackagePath": "staticwebassets\\images\\books\\thanhgionggiong.png"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\thaotungtinhyeu.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\thaotungtinhyeu.jpg"
     },
     {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\tinhnu.jpg",
@@ -165,44 +93,20 @@
       "PackagePath": "staticwebassets\\images\\books\\tongiao.webp"
     },
     {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\trendoi.png",
-      "PackagePath": "staticwebassets\\images\\books\\trendoi.png"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\tritue.jpeg",
-      "PackagePath": "staticwebassets\\images\\books\\tritue.jpeg"
-    },
-    {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\trontim.jpeg",
       "PackagePath": "staticwebassets\\images\\books\\trontim.jpeg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\truyencotich.webp",
-      "PackagePath": "staticwebassets\\images\\books\\truyencotich.webp"
     },
     {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\truyenkieu.jpg",
       "PackagePath": "staticwebassets\\images\\books\\truyenkieu.jpg"
     },
     {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\vuamomatvuamocuaso.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\vuamomatvuamocuaso.jpg"
-    },
-    {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\vutru.jpg",
       "PackagePath": "staticwebassets\\images\\books\\vutru.jpg"
     },
     {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\xahoichunghia.png",
-      "PackagePath": "staticwebassets\\images\\books\\xahoichunghia.png"
-    },
-    {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\xahoivanhoa.jpg",
       "PackagePath": "staticwebassets\\images\\books\\xahoivanhoa.jpg"
-    },
-    {
-      "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\images\\books\\zoo.jpg",
-      "PackagePath": "staticwebassets\\images\\books\\zoo.jpg"
     },
     {
       "Id": "D:\\do an 2\\Quanlythuvien\\Quanlythuvien\\wwwroot\\js\\site.js",

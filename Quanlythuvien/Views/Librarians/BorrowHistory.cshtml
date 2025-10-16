@@ -1,0 +1,215 @@
+﻿@model List<Borrowed>
+
+@{
+    ViewData["Title"] = "Lịch sử mượn sách";
+    var currentStatus = ViewBag.CurrentStatus as string;
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h2 {
+        color: #002b5c;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-header {
+        background: linear-gradient(135deg, #002b5c, #004b9f);
+        color: white;
+        border-radius: 12px 12px 0 0 !important;
+        padding: 15px 20px;
+        font-weight: 600;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    thead {
+        background-color: #002b5c;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #eef4ff;
+    }
+
+    .btn {
+        border-radius: 8px;
+        padding: 8px 18px;
+        transition: all 0.25s ease;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+    .badge {
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+    }
+
+    .filter-card {
+        border-left: 4px solid #002b5c;
+        border-radius: 10px;
+    }
+
+    .table-icon {
+        font-size: 1.2rem;
+        margin-right: 5px;
+    }
+</style>
+
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="bi bi-journal-text"></i> Lịch sử mượn sách</h2>
+        <a href="@Url.Action("Dashboard")" class="btn btn-secondary">
+            <i class="bi bi-arrow-left-circle"></i> Quay lại Dashboard
+        </a>
+    </div>
+
+    <!-- Bộ lọc -->
+    <div class="card mb-4 filter-card">
+        <div class="card-body">
+            <form method="get" class="row g-3 align-items-end">
+                <div class="col-auto">
+                    <label class="form-label fw-bold"><i class="bi bi-funnel"></i> Lọc theo trạng thái:</label>
+                </div>
+                <div class="col-auto">
+                    <select name="status" class="form-select" onchange="this.form.submit()">
+                        <option value="">Tất cả</option>
+                        @if (currentStatus == "Pending")
+                        {
+                            <option value="Pending" selected>Chờ duyệt</option>
+                        }
+                        else
+                        {
+                            <option value="Pending">Chờ duyệt</option>
+                        }
+
+                        @if (currentStatus == "Borrowed")
+                        {
+                            <option value="Borrowed" selected>Đang mượn</option>
+                        }
+                        else
+                        {
+                            <option value="Borrowed">Đang mượn</option>
+                        }
+
+                        @if (currentStatus == "Returned")
+                        {
+                            <option value="Returned" selected>Đã trả</option>
+                        }
+                        else
+                        {
+                            <option value="Returned">Đã trả</option>
+                        }
+
+                        @if (currentStatus == "Rejected")
+                        {
+                            <option value="Rejected" selected>Từ chối</option>
+                        }
+                        else
+                        {
+                            <option value="Rejected">Từ chối</option>
+                        }
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bảng lịch sử -->
+    <div class="card">
+        <div class="card-header">
+            <i class="bi bi-list-check"></i> Danh sách (@Model.Count)
+        </div>
+        <div class="card-body p-0">
+            @if (Model.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th><i class="bi bi-hash"></i> Mã</th>
+                                <th><i class="bi bi-person-circle"></i> Sinh viên</th>
+                                <th><i class="bi bi-book"></i> Sách</th>
+                                <th><i class="bi bi-calendar-date"></i> Ngày mượn</th>
+                                <th><i class="bi bi-calendar-check"></i> Hạn trả</th>
+                                <th><i class="bi bi-calendar2-x"></i> Ngày trả</th>
+                                <th><i class="bi bi-person-badge"></i> Thủ thư</th>
+                                <th><i class="bi bi-info-circle"></i> Trạng thái</th>
+                                <th><i class="bi bi-cash-stack"></i> Phạt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var borrow in Model)
+                            {
+                                <tr>
+                                    <td>@borrow.BorrowId</td>
+                                    <td>@borrow.Student?.Fullname</td>
+                                    <td>@borrow.Book?.Title</td>
+                                    <td>@borrow.BorrowDate?.ToString("dd/MM/yyyy")</td>
+                                    <td>@borrow.DueDate?.ToString("dd/MM/yyyy")</td>
+                                    <td>@(borrow.ReturnDate?.ToString("dd/MM/yyyy") ?? "-")</td>
+                                    <td>@(borrow.Libra?.Fullname ?? "-")</td>
+                                    <td>
+                                        @switch (borrow.BookStatus)
+                                        {
+                                            case "Pending":
+                                                <span class="badge bg-warning text-dark">
+                                                    <i class="bi bi-hourglass-split"></i> Chờ duyệt
+                                                </span>
+                                                break;
+                                            case "Borrowed":
+                                                <span class="badge bg-info text-dark">
+                                                    <i class="bi bi-book-half"></i> Đang mượn
+                                                </span>
+                                                break;
+                                            case "Returned":
+                                                <span class="badge bg-success">
+                                                    <i class="bi bi-check-circle"></i> Đã trả
+                                                </span>
+                                                break;
+                                            case "Rejected":
+                                                <span class="badge bg-danger">
+                                                    <i class="bi bi-x-circle"></i> Từ chối
+                                                </span>
+                                                break;
+                                        }
+                                    </td>
+                                    <td>@borrow.FineAmount?.ToString("N0")₫</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <p class="text-muted text-center py-4"><i class="bi bi-clipboard-x"></i> Không có dữ liệu</p>
+            }
+        </div>
+    </div>
+</div>

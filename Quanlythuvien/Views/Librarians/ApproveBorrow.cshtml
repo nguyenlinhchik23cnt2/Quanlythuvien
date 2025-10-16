@@ -1,0 +1,161 @@
+﻿@model Borrowed
+
+@{
+    ViewData["Title"] = "Duyệt yêu cầu mượn sách";
+    var librarians = ViewBag.Librarians as List<Librarian>;
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .approve-container {
+        max-width: 700px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #ffc107;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    .info-group {
+        background-color: #f8f9fa;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border-left: 4px solid #ffc107;
+    }
+
+        .info-group strong {
+            color: #002b5c;
+        }
+
+    .btn {
+        border-radius: 8px;
+        padding: 10px 24px;
+        font-size: 1rem;
+        transition: all 0.25s ease;
+    }
+
+    .btn-success {
+        background-color: #198754;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: #157347;
+            transform: translateY(-2px);
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+</style>
+
+<div class="approve-container">
+    <h2><i class="bi bi-hourglass-split"></i> Duyệt yêu cầu mượn sách</h2>
+
+    <!-- Thông tin sinh viên -->
+    <div class="info-group">
+        <div class="row mb-2">
+            <div class="col-6"><strong><i class="bi bi-person"></i> Sinh viên:</strong></div>
+            <div class="col-6">@Model.Student?.Fullname</div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-6"><strong><i class="bi bi-person-vcard"></i> Mã SV:</strong></div>
+            <div class="col-6">@Model.Student?.StudentId</div>
+        </div>
+        <div class="row">
+            <div class="col-6"><strong><i class="bi bi-book"></i> Sách:</strong></div>
+            <div class="col-6">@Model.Book?.Title</div>
+        </div>
+    </div>
+
+    <!-- Thông tin mượn -->
+    <div class="info-group">
+        <div class="row mb-2">
+            <div class="col-4"><strong><i class="bi bi-calendar-date"></i> Ngày yêu cầu:</strong></div>
+            <div class="col-8">@Model.BorrowDate?.ToString("dd/MM/yyyy")</div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-4"><strong><i class="bi bi-clock-history"></i> Hạn trả dự kiến:</strong></div>
+            <div class="col-8">@Model.DueDate?.ToString("dd/MM/yyyy")</div>
+        </div>
+        <div class="row">
+            <div class="col-4"><strong><i class="bi bi-hourglass"></i> Thời hạn:</strong></div>
+            <div class="col-8">
+                @{
+                    if (Model.DueDate.HasValue && Model.BorrowDate.HasValue)
+                    {
+                        var days = (Model.DueDate.Value.ToDateTime(TimeOnly.MinValue) - Model.BorrowDate.Value.ToDateTime(TimeOnly.MinValue)).Days;
+                        @($"{days} ngày")
+                    }
+                    else
+                    {
+                        @("-")
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Form duyệt -->
+    <form asp-action="ApproveBorrow" method="post">
+        <input type="hidden" name="id" value="@Model.BorrowId" />
+
+        <div class="form-group mb-3">
+            <label class="form-label fw-bold"><i class="bi bi-person-badge"></i> Thủ thư xử lý:</label>
+            <select name="librarianId" class="form-select" required>
+                <option value="">-- Chọn thủ thư --</option>
+                @foreach (var lib in librarians)
+                {
+                    <option value="@lib.LibraId">@lib.Fullname (@lib.Username)</option>
+                }
+            </select>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a href="@Url.Action("Dashboard")" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Quay lại
+            </a>
+            <div>
+                <button type="submit" name="action" value="approve"
+                        class="btn btn-success me-2"
+                        onclick="return confirm('Xác nhận duyệt yêu cầu mượn sách này?')">
+                    <i class="bi bi-check2-circle"></i> Duyệt
+                </button>
+                <button type="submit" name="action" value="reject"
+                        class="btn btn-danger"
+                        onclick="return confirm('Xác nhận từ chối yêu cầu này?')">
+                    <i class="bi bi-x-circle"></i> Từ chối
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

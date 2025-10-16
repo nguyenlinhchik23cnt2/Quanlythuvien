@@ -1,0 +1,176 @@
+﻿@model Borrowed
+
+@{
+    ViewData["Title"] = "Xử lý trả sách";
+    var dueDate = Model.DueDate.HasValue ? Model.DueDate.Value.ToDateTime(TimeOnly.MinValue) : DateTime.Now;
+    var daysOverdue = (dueDate < DateTime.Now) ? (DateTime.Now - dueDate).Days : 0;
+    var calculatedFine = daysOverdue * 5000;
+    var librarians = ViewBag.Librarians as List<Librarian>;
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .return-container {
+        max-width: 700px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #198754;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    .info-group {
+        background-color: #f8f9fa;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border-left: 4px solid #0d6efd;
+    }
+
+        .info-group strong {
+            color: #002b5c;
+        }
+
+    .alert-warning, .alert-success {
+        border-radius: 10px;
+        padding: 18px;
+    }
+
+    .alert-warning {
+        background-color: #fff8e1;
+        border: 1px solid #ffc107;
+    }
+
+    .alert-success {
+        background-color: #e6f4ea;
+        border: 1px solid #28a745;
+    }
+
+    .btn {
+        border-radius: 8px;
+        padding: 10px 24px;
+        font-size: 1rem;
+        transition: all 0.25s ease;
+    }
+
+    .btn-success {
+        background-color: #198754;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: #157347;
+            transform: translateY(-2px);
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+</style>
+
+<div class="return-container">
+    <h2><i class="bi bi-arrow-repeat"></i> Xử lý trả sách</h2>
+
+    <!-- Thông tin sinh viên -->
+    <div class="info-group mb-3">
+        <div class="row mb-2">
+            <div class="col-6"><strong><i class="bi bi-person"></i> Sinh viên:</strong></div>
+            <div class="col-6">@Model.Student?.Fullname</div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-6"><strong><i class="bi bi-person-vcard"></i> Mã SV:</strong></div>
+            <div class="col-6">@Model.Student?.StudentId</div>
+        </div>
+        <div class="row">
+            <div class="col-6"><strong><i class="bi bi-book"></i> Sách:</strong></div>
+            <div class="col-6">@Model.Book?.Title</div>
+        </div>
+    </div>
+
+    <!-- Thông tin mượn trả -->
+    <div class="info-group">
+        <div class="row mb-2">
+            <div class="col-4"><strong><i class="bi bi-calendar-date"></i> Ngày mượn:</strong></div>
+            <div class="col-8">@Model.BorrowDate?.ToString("dd/MM/yyyy")</div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-4"><strong><i class="bi bi-clock"></i> Hạn trả:</strong></div>
+            <div class="col-8">@Model.DueDate?.ToString("dd/MM/yyyy")</div>
+        </div>
+        <div class="row">
+            <div class="col-4"><strong><i class="bi bi-calendar-check"></i> Ngày trả thực tế:</strong></div>
+            <div class="col-8">@DateTime.Now.ToString("dd/MM/yyyy")</div>
+        </div>
+    </div>
+
+    <!-- Cảnh báo hoặc thông báo -->
+    @if (daysOverdue > 0)
+    {
+        <div class="alert alert-warning mt-3">
+            <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+            <strong> Sách đã quá hạn @daysOverdue ngày!</strong><br />
+            <i class="bi bi-cash-stack"></i> Tiền phạt đề xuất:
+            <strong>@calculatedFine.ToString("N0")₫</strong> (5,000₫/ngày)
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success mt-3">
+            <i class="bi bi-check-circle-fill text-success"></i>
+            Trả đúng hạn – không có phí phạt 🎉
+        </div>
+    }
+
+    <hr />
+
+    <!-- Form xác nhận -->
+    <form asp-action="ProcessReturn" method="post">
+        <input type="hidden" name="id" value="@Model.BorrowId" />
+
+        <div class="form-group mb-3">
+            <label class="form-label fw-bold"><i class="bi bi-currency-exchange"></i> Tiền phạt (₫):</label>
+            <input type="number" name="fineAmount" class="form-control"
+                   value="@calculatedFine" min="0" step="1000" required />
+            <small class="text-muted">Bạn có thể điều chỉnh số tiền phạt nếu cần.</small>
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="form-label fw-bold"><i class="bi bi-person-badge"></i> Thủ thư xử lý:</label>
+            <select name="librarianId" class="form-select" required>
+                <option value="">-- Chọn thủ thư --</option>
+                @foreach (var lib in librarians)
+                {
+                    <option value="@lib.LibraId">@lib.Fullname (@lib.Username)</option>
+                }
+            </select>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <a href="@Url.Action("Dashboard")" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Quay lại
+            </a>
+            <button type="submit" class="btn btn-success"
+                    onclick="return confirm('Xác nhận xử lý trả sách?')">
+                <i class="bi bi-check2-circle"></i> Xác nhận trả sách
+            </button>
+        </div>
+    </form>
+</div>

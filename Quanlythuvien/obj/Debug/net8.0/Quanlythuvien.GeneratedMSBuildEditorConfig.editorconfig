@@ -190,8 +190,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHVkZW50Q2F0ZWdvcmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/ApproveBorrow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xBcHByb3ZlQm9ycm93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/BorrowHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xCb3Jyb3dIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/Delete.cshtml]
@@ -208,6 +224,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/ProcessReturn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xQcm9jZXNzUmV0dXJuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/SearchStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xTZWFyY2hTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Librarians/StudentBorrows.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicmFyaWFuc1xTdHVkZW50Qm9ycm93cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/do an 2/Quanlythuvien/Quanlythuvien/Views/Publishers/Create.cshtml]

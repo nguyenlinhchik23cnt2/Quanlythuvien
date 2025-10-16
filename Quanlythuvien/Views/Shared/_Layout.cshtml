@@ -22,112 +22,107 @@
         body {
             font-family: var(--font-family);
             font-size: 15px;
-            color: #212529;
             background-color: #f8fafc;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Header & Navbar */
+        /* Navbar */
         .navbar {
             background-color: var(--main-bg) !important;
         }
 
         .navbar-brand span {
             font-weight: 600;
-            font-size: 1.25rem;
             color: var(--main-text);
         }
-
-        .navbar-brand img {
-            height: 70px;
-            width: auto;
-            border-radius: 8px;
-            margin-right: 10px;
-            transition: transform 0.3s ease;
-        }
-
-            .navbar-brand img:hover {
-                transform: scale(1.05);
-            }
 
         .nav-link {
             color: var(--main-text) !important;
             font-weight: 500;
-            transition: color 0.2s ease;
         }
 
             .nav-link:hover {
                 color: var(--accent) !important;
             }
 
-        .dropdown-menu {
-            font-size: 14px;
-        }
-
-       /*  Sidebar */ */
         aside {
-            background-color: #ffffff;
-            border-right: 1px solid #dee2e6;
+            background-color: #fdfdfd;
+            border-right: 1px solid #dcdfe3;
             min-height: 100%;
+            padding: 20px 15px;
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
         }
 
             aside h6 {
-                font-weight: 600;
-                color: black;
+                font-weight: 700;
+                color: #002b5c;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                font-size: 0.9rem;
             }
 
             aside .nav-link {
-                color: #333;
-                padding: 6px 0;
+                display: flex;
+                align-items: center;
+                color: #222 !important;
+                background-color: #f9fafb;
+                padding: 10px 12px;
+                margin-bottom: 6px;
+                border-radius: 8px;
+                font-weight: 500;
                 font-size: 15px;
+                transition: all 0.2s ease;
+                box-shadow: inset 0 0 0 1px #e9ecef;
             }
 
-                aside .nav-link:hover {
-                    color: var(--main-bg);
-                    background-color: #f2f6ff;
-                    border-radius: 4px;
+                aside .nav-link i {
+                    width: 20px;
+                    text-align: center;
+                    margin-right: 8px;
+                    font-size: 1rem;
+                    color: #002b5c;
+                    transition: color 0.2s ease;
                 }
 
-    
+                aside .nav-link:hover {
+                    background-color: #e8f0ff;
+                    color: #002b5c !important;
+                    font-weight: 600;
+                    box-shadow: inset 0 0 0 2px #002b5c;
+                }
+
+                aside .nav-link.active {
+                    background-color: #002b5c;
+                    color: white !important;
+                    font-weight: 600;
+                    box-shadow: inset 0 0 0 2px #001d3d;
+                }
+
+                    aside .nav-link.active i {
+                        color: #ffd966;
+                    }
+
+
         footer {
             background-color: var(--main-bg);
             color: var(--main-text);
             margin-top: auto;
-            position: relative;
         }
-
-            footer a {
-                color: var(--accent);
-                text-decoration: none;
-            }
-
-                footer a:hover {
-                    text-decoration: underline;
-                }
 
         .footer-bottom {
             background-color: #001d3d;
             font-size: 14px;
         }
 
-
-        html, body {
-            height: 100%;
-        }
-
         main {
             flex-grow: 1;
         }
-
-        .alert {
-            font-size: 14px;
-        }
     </style>
-
     @RenderSection("Styles", required: false)
-</head> 
+</head>
 <body>
     <!-- Header -->
     <header>
@@ -157,7 +152,7 @@
                         <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="StudentCategories">Thể Loại</a></li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Borroweds" asp-action="MyBorrowedBooks">Sách đã mượn</a>
-                        </li> 
+                        </li>
                     </ul>
                     <!-- Right nav -->
                     <ul class="navbar-nav ms-auto">
@@ -191,6 +186,8 @@
                                         <li><a class="dropdown-item" asp-controller="Books" asp-action="Index"><i class="bi bi-book me-2"></i> Quản Lý Sách</a></li>
                                         <li><a class="dropdown-item" asp-controller="Categories" asp-action="Index"><i class="bi bi-tags me-2"></i> Thêm Thể Loại</a></li>
                                         <li><a class="dropdown-item" asp-controller="Authors" asp-action="Index"><i class="bi bi-pen me-2"></i> Thêm Tác Giả</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Borroweds" asp-action="Index"><i class="bi bi-pen me-2"></i> Quản Lý Phiếu Mượn</a></li>
+
                                     </ul>
                                 </li>
                             }
@@ -215,15 +212,68 @@
                 <aside class="col-md-2 col-lg-2 d-none d-md-block bg-light border-end p-3">
                     <h6 class="text-uppercase fw-bold text-secondary mb-3">Bảng Điều Khiển</h6>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a class="nav-link text-dark" asp-controller="Admins" asp-action="Index"><i class="bi bi-person-badge me-2"></i> Quản Lý Admin</a></li>
-                        <li class="nav-item mb-1"><a class="nav-link text-dark" asp-controller="Librarians" asp-action="Index"><i class="bi bi-people me-2"></i> Thủ Thư</a></li>
-                        <li class="nav-item mb-1"><a class="nav-link text-dark" asp-controller="Students" asp-action="Index"><i class="bi bi-person-lines-fill me-2"></i> Sinh Viên</a></li>
-                        <li class="nav-item mb-1"><a class="nav-link text-dark" asp-controller="Books" asp-action="Index"><i class="bi bi-book me-2"></i> Sách</a></li>
-                        <li class="nav-item mb-1"><a class="nav-link text-dark" asp-controller="Categories" asp-action="Index"><i class="bi bi-tags me-2"></i> Thể Loại</a></li>
-                        <li class="nav-item mb-1"><a class="nav-link text-dark" asp-controller="Authors" asp-action="Index"><i class="bi bi-pen me-2"></i> Tác Giả</a></li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Admins" asp-action="Index">
+                                <i class="bi bi-person-badge me-2"></i> Quản Lý Admin
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Librarians" asp-action="Index">
+                                <i class="bi bi-people me-2"></i> Thủ Thư
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Students" asp-action="Index">
+                                <i class="bi bi-person-lines-fill me-2"></i> Sinh Viên
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Books" asp-action="Index">
+                                <i class="bi bi-book me-2"></i> Sách
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Categories" asp-action="Index">
+                                <i class="bi bi-tags me-2"></i> Thể Loại
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Authors" asp-action="Index">
+                                <i class="bi bi-pen me-2"></i> Tác Giả
+                            </a>
+                        </li>
                     </ul>
                 </aside>
             }
+            else if (User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Librarian"))
+            {
+                <aside class="col-md-2 bg-light p-3">
+                    <h6 class="fw-bold text-secondary mb-3">Bảng điều khiển Thủ thư</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Librarians" asp-action="Dashboard">
+                                <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Librarians" asp-action="BorrowHistory">
+                                <i class="bi bi-journal-text me-2"></i> Lịch sử mượn
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Librarians" asp-action="SearchStudent">
+                                <i class="bi bi-search me-2"></i> Tra cứu sinh viên
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link text-dark" asp-controller="Librarians" asp-action="ChangePassword" asp-route-id="@User.FindFirst("LibraId")?.Value">
+                                <i class="bi bi-key me-2"></i> Đổi mật khẩu
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+            }
+
 
             <!-- Main content -->
             <main role="main" class="col px-4 py-3">

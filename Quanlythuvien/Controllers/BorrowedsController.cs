@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Quanlythuvien.Models;
 
+
 namespace Quanlythuvien.Controllers
 {
    
@@ -233,6 +234,33 @@ namespace Quanlythuvien.Controllers
                 .ToListAsync();
 
             return View(borrowedBooks);
+        }
+
+        // lọc theo gmail
+        // ===============================
+        // ✅ Bộ lọc Gmail trong quản lý phiếu mượn
+        // ===============================
+        [Authorize(Roles = "Admin,Librarian")]
+        [HttpGet]
+        public async Task<IActionResult> Index(string? gmail)
+        {
+            var query = _context.Borroweds
+                .Include(b => b.Book)
+                .Include(b => b.Libra)
+                .Include(b => b.Student)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(gmail))
+            {
+                ViewBag.CurrentGmail = gmail;
+
+                gmail = gmail.Trim();
+                query = query.Where(b => b.Student.Email.Contains(gmail));
+            }
+
+            ViewBag.CurrentGmail = gmail;
+
+            return View(await query.ToListAsync());
         }
 
     }

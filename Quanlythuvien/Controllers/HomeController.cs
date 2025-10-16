@@ -64,8 +64,13 @@ namespace Quanlythuvien.Controllers
 
             ViewBag.PopularBooks = popularBooks;
             ViewBag.Books = books;
-            ViewBag.SelectedCategory = categoryId;
+
+            ViewBag.Categories = _context.Categories.ToList(); 
+            ViewBag.SelectedCateId = categoryId;               
             ViewBag.SearchQuery = searchQuery;
+
+            return View();
+
 
             return View();
         }
@@ -175,8 +180,8 @@ namespace Quanlythuvien.Controllers
         public IActionResult Privacy() => View();
         public IActionResult Introduce() => View();
         public IActionResult Contact() => View();
-        public IActionResult theloai() => View();
-
+        
+        public IActionResult Resources() => View();
         [HttpPost]
         public IActionResult Contact(string Name, string Email, string Message)
         {

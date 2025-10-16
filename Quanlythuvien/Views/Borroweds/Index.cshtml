@@ -92,7 +92,84 @@
 </style>
 <!-- ✅ HẾT PHẦN CSS THÊM -->
 
-<h1>Danh Sách Mượn Sách</h1>
+
+
+
+
+
+<!-- ✅ Bộ lọc Gmail -->
+<form method="get" asp-action="Index" class="mb-3">
+    <div class="input-group" style="max-width: 400px; margin: 0 auto 20px auto;">
+        <input type="text"
+               name="gmail"
+               class="form-control"
+               placeholder="Nhập Gmail để lọc..."
+               value="@ViewBag.CurrentGmail" />
+        <button type="submit" class="btn btn-primary">Lọc</button>
+        <a asp-action="Index" class="btn btn-secondary">🔄 Xóa lọc</a>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.CurrentGmail))
+{
+    <p class="text-center">
+        <strong>Đang lọc theo Gmail:</strong> @ViewBag.CurrentGmail <br />
+        <strong>Tổng số phiếu mượn:</strong> @Model.Count()
+    </p>
+}
+<!-- ✅ Hết phần bộ lọc Gmail -->
+<!-- ✅ PHẦN TỔNG HỢP SÁCH MƯỢN THEO GMAIL -->
+@if (!string.IsNullOrEmpty(ViewBag.CurrentGmail))
+{
+    var grouped = Model
+        .GroupBy(b => new { b.Student?.Email, b.Student?.Fullname })
+        .Select(g => new
+        {
+            Gmail = g.Key.Email,
+            FullName = g.Key.Fullname,
+            Total = g.Count(),
+            Books = g.Select(x => x.Book?.Title).Distinct().ToList()
+        })
+        .ToList();
+
+    if (grouped.Any())
+    {
+       
+
+        <table class="table table-bordered table-hover mt-3 text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Gmail</th>
+                    <th>Tên người mượn</th>
+                    <th>Tổng số sách</th>
+                    <th>Danh sách sách đã mượn</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var g in grouped)
+                {
+                    <tr>
+                        <td>@g.Gmail</td>
+                        <td>@g.FullName</td>
+                        <td>@g.Total</td>
+                        <td>
+                            <ul class="list-unstyled">
+                                @foreach (var title in g.Books)
+                                {
+                                    <li>📘 @title</li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-center text-muted mt-3">Không tìm thấy sách nào cho Gmail này.</p>
+    }
+}
 
 <p class="text-end">
     <a asp-action="Create" class="btn btn-success">➕ Thêm Phiếu Mượn</a>
