@@ -45,24 +45,24 @@
 
 
     <!-- 🧰 Dịch vụ Thư viện -->
-    <div class="my-5">
-        <h2 class="text-center mb-4 fw-bold text-uppercase">Dịch vụ Thư viện</h2>
+    <section class="my-5">
+        <h3 class="text-center mb-4 fw-bold text-uppercase text-primary">Dịch vụ Thư viện</h3>
 
         <div class="row g-4 justify-content-center">
             @{
                 var services = new[]
                 {
-                    new {Title="Mượn trả, gia hạn tài liệu", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/Banner_dv_muon_tra_gia_han.jpg", Des="Tìm hiểu cách mượn, trả và gia hạn tài liệu tại Thư viện."},
-                    new {Title="Phát hành giáo trình", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/banner_dv_phathanhgiaotrinh.jpg", Des="Dịch vụ cung cấp giáo trình cho sinh viên của TMU."},
-                    new {Title="Đăng ký thành viên Thư viện", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/image16.png", Des="Đăng ký thành viên để sử dụng đầy đủ dịch vụ."},
-                    new {Title="Mượn liên thư viện", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/image17.png", Des="Sử dụng dịch vụ Mượn Liên thư viện khi tài liệu bạn cần không có tại TMU."}
-                };
+            new {Title="Mượn trả, gia hạn tài liệu", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/Banner_dv_muon_tra_gia_han.jpg", Des="Tìm hiểu cách mượn, trả và gia hạn tài liệu tại Thư viện."},
+            new {Title="Phát hành giáo trình", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/banner_dv_phathanhgiaotrinh.jpg", Des="Dịch vụ cung cấp giáo trình cho sinh viên của TMU."},
+            new {Title="Đăng ký thành viên Thư viện", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/image16.png", Des="Đăng ký thành viên để sử dụng đầy đủ dịch vụ."},
+            new {Title="Mượn liên thư viện", Img="https://drm.tmu.edu.vn/file/static/limaimage/demoData/image17.png", Des="Sử dụng dịch vụ Mượn Liên thư viện khi tài liệu bạn cần không có tại TMU."}
+            };
             }
 
             @foreach (var s in services)
             {
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="item-home-card shadow-sm rounded overflow-hidden">
+                    <div class="item-home-card shadow-sm rounded overflow-hidden h-100">
                         <div class="item-home-card__image">
                             <div class="img-box" style="background-image: url('@s.Img');"></div>
                         </div>
@@ -74,17 +74,18 @@
                 </div>
             }
         </div>
-    </div>
+    </section>
 
     <div class="row">
         <!-- 📚 Danh mục Sách -->
-        <div class="col-lg-9">
-            <h4 class="mb-3 text-primary border-bottom pb-2">Danh mục Sách</h4>
+        <section class="my-5">
+            <h4 class="mb-4 text-primary border-bottom pb-2 fw-semibold">Danh mục Sách</h4>
+
             <div class="row">
                 @if (!books.Any())
                 {
                     <div class="col-12">
-                        <div class="alert alert-info">Không tìm thấy sách phù hợp.</div>
+                        <div class="alert alert-info text-center">Không tìm thấy sách phù hợp.</div>
                     </div>
                 }
                 else
@@ -92,25 +93,25 @@
                     @foreach (var book in books)
                     {
                         string imageSrc = string.IsNullOrEmpty(book.ImagePath)
-                            ? Url.Content("~/images/books/default-book.jpg")
-                            : (book.ImagePath.StartsWith("http")
-                                ? book.ImagePath
-                                : Url.Content("~" + book.ImagePath));
+                        ? Url.Content("~/images/books/default-book.jpg")
+                        : (book.ImagePath.StartsWith("http")
+                        ? book.ImagePath
+                        : Url.Content("~" + book.ImagePath));
 
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 shadow-sm">
-                                <img src="@imageSrc" alt="@book.Title" class="card-img-top" style="height: 300px; object-fit: cover;" />
+                        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                            <div class="card h-100 shadow-sm border-0">
+                                <img src="@imageSrc" alt="@book.Title" class="card-img-top" style="height: 280px; object-fit: cover;" />
                                 <div class="card-body">
-                                    <h5 class="card-title">@book.Title</h5>
-                                    <p class="card-text text-muted">
-                                        Tác giả: @(string.Join(", ", book.Authors))
+                                    <h6 class="card-title text-primary">@book.Title</h6>
+                                    <p class="card-text small mb-1 text-muted">
+                                        <strong>Tác giả:</strong> @(string.Join(", ", book.Authors))
                                     </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">Thể loại: @book.CateName</small><br />
-                                        <small class="text-muted">Năm XB: @book.YearPublished</small>
+                                    <p class="card-text small text-muted">
+                                        <strong>Thể loại:</strong> @book.CateName<br />
+                                        <strong>Năm XB:</strong> @book.YearPublished
                                     </p>
                                 </div>
-                                <div class="card-footer text-center">
+                                <div class="card-footer bg-transparent border-0 text-center">
                                     <a asp-action="Details" asp-route-id="@book.BookId" class="btn btn-outline-primary btn-sm">
                                         Xem chi tiết
                                     </a>
@@ -120,7 +121,8 @@
                     }
                 }
             </div>
-        </div>
+        </section>
+
 
        
      
@@ -152,49 +154,273 @@
 
 @section Styles {
     <style>
+        /* 🎨 ===== TOÀN TRANG ===== */
         body {
             background-color: #f9fafc;
+            color: #002b5c;
+            font-family: "Segoe UI", Arial, sans-serif;
+            overflow-x: hidden;
         }
-        .card:hover {
-            transform: translateY(-3px);
-            transition: all 0.3s ease;
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #002b5c;
+            font-weight: 700;
         }
+
+        a {
+            color: #002b5c;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+            a:hover {
+                color: #004080;
+            }
+
+        hr {
+            border-color: rgba(0, 43, 92, 0.2);
+        }
+
+        /* ===== HEADER / BANNER ===== */
+        .text-primary {
+            color: #002b5c !important;
+        }
+
+        .fw-bold {
+            font-weight: 700 !important;
+        }
+
+        img {
+            user-select: none;
+        }
+
+        /* ===== FORM / INPUT ===== */
+        .form-select, .form-control {
+            border-radius: 10px;
+            border: 1px solid rgba(0, 43, 92, 0.25);
+            box-shadow: none;
+        }
+
+            .form-select:focus, .form-control:focus {
+                border-color: #002b5c;
+                box-shadow: 0 0 0 0.2rem rgba(0, 43, 92, 0.15);
+            }
+
+        /* ===== BUTTON ===== */
+        .btn {
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary {
+            background-color: #002b5c;
+            border-color: #002b5c;
+            color: #fff;
+        }
+
+            .btn-primary:hover {
+                background-color: #004080;
+                border-color: #004080;
+            }
+
+        .btn-outline-primary {
+            border-color: #002b5c;
+            color: #002b5c;
+        }
+
+            .btn-outline-primary:hover {
+                background-color: #002b5c;
+                color: #fff;
+            }
+
+        .btn-outline-secondary {
+            border-color: #6c757d;
+            color: #6c757d;
+        }
+
+            .btn-outline-secondary:hover {
+                background-color: #6c757d;
+                color: #fff;
+            }
+
+        .btn-outline-success {
+            border-color: #198754;
+            color: #198754;
+        }
+
+            .btn-outline-success:hover {
+                background-color: #198754;
+                color: #fff;
+            }
+
+        /* ===== THẺ DỊCH VỤ ===== */
+        .item-home-card {
+            background: #fff;
+            border-radius: 16px;
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+            .item-home-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+
         .img-box {
             background-size: cover;
             background-position: center;
-            height: 200px;
-        }
-        .item-home-card__title {
-            font-size: 1.1rem;
-            margin-top: 8px;
-        }
-        .item-home-card__des {
-            font-size: 0.95rem;
-            color: #555;
-        }
-        .item-home-card {
-            transition: all 0.3s ease;
-            background: #fff;
-            height: 100%;
-        }
-        .item-home-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
-        }
-        .item-home-card__image .img-box {
             height: 180px;
-            background-size: cover;
-            background-position: center;
             width: 100%;
         }
-        .event-item:hover {
-            background: #f0f8ff;
-            transform: translateY(-2px);
+
+        /* ===== DANH MỤC SÁCH ===== */
+        .section-title {
+            color: #002b5c;
+            border-bottom: 2px solid #002b5c;
+            padding-bottom: 6px;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
-        @@media (max-width: 767px) {
-            .item-home-card__image .img-box {
-                height: 160px;
+
+        .book-card {
+            position: relative;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+            .book-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            }
+
+        /* ẢNH BÌA */
+        .book-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .book-card:hover .book-img {
+            transform: scale(1.08);
+            filter: brightness(0.7);
+        }
+
+        /* OVERLAY MỜ */
+        .book-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 220px;
+            background: rgba(0, 43, 92, 0.65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .book-card:hover .book-overlay {
+            opacity: 1;
+        }
+
+        .book-overlay a {
+            background: #fff;
+            color: #002b5c;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+            .book-overlay a:hover {
+                background: #002b5c;
+                color: #fff;
+            }
+
+        /* NỘI DUNG SÁCH */
+        .book-info {
+            padding: 12px 15px;
+            flex-grow: 1;
+        }
+
+        .book-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: #002b5c;
+            margin-bottom: 8px;
+        }
+
+        .book-meta {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .book-footer {
+            text-align: center;
+            padding: 10px 15px 15px;
+        }
+
+        .btn-view {
+            width: 100%;
+            border-color: #002b5c;
+            color: #002b5c;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+            .btn-view:hover {
+                background-color: #002b5c;
+                color: #fff;
+                transform: translateY(-2px);
+            }
+
+        /* ===== ANIMATION XUẤT HIỆN ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @@keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-    </style>
+
+        /* ===== RESPONSIVE ===== */
+        @@media (min-width: 1200px) {
+            .book-col {
+                flex: 0 0 20%; /* 5 ô / hàng */
+                max-width: 20%;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .book-img, .book-overlay {
+                height: 160px;
+            }
+
+            .btn {
+                font-size: 14px;
+            }
+        }</style>
 }
